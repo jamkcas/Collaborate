@@ -38,7 +38,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-
+    # Project.delete(params[:id])
+    # redirect_to
   end
 
 end

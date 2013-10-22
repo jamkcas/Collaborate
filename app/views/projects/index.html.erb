@@ -1,0 +1,12 @@
+<% @projects.each do |p| %>
+  <ul class='projectList'>
+    <li>
+      <h1><a href='/projects/<%= p.id %>'><%= p.title %></a></h1>
+      <% if current_user && current_user.id == p.user_id %>
+        <%= link_to 'Update', edit_project_path(p) %>
+        <%= link_to 'Delete', project_path(p), method: 'delete' %>
+      <% end %>
+      <p></p>
+    </li>
+  </ul>
+<% end %>

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   attr_accessible :user_name, :email, :password, :password_confirmation
+  has_many :project
 
   before_save :create_remember_token
 

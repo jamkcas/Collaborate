@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_user_name(params[:user_name])
-    if user && user.authenticate(params[:password])
-      sign_in(user)
-      redirect_to user_path(user.id)
+    @user = User.find_by_user_name(params[:user_name])
+    if @user && @user.authenticate(params[:password])
+      sign_in(@user)
+      redirect_to projects_path(@user)
     else
       flash[:errors] = 'Error'
       render :new

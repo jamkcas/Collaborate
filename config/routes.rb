@@ -1,9 +1,12 @@
 Collaborate::Application.routes.draw do
+  root to: 'home#index'
 
+  get '/' => 'home#index'
   resources :users, except: [:index]
-  resources :sessions, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :projects
 
-  # post '/users/:id' => 'users#update'
   get '/logout' => 'sessions#destroy'
+
 
 end
