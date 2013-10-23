@@ -9,21 +9,27 @@
 <body>
 <%= flash[:errors] if flash[:errors] %>
   <div class='container'>
-    <header class='mainHeader'>
-      <h1>Collaborate</h1>
-      <h3>Work on those side projects. Find people to work with.</h3>
+    <header class='mainHeader row'>
       <% if current_user %>
         <h5>Welcome, <%= current_user.user_name %></h5>
-        <nav>
+        <nav class='mainNav'>
           <li><%= link_to 'Logout', logout_path %></li>
-          <li><%= link_to 'Change Password', edit_user_path(current_user) %></li>
+          <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
           <li><%= link_to 'Create Project', new_project_path %></li>
         </nav>
+      <% else %>
+        <nav class='mainNav'>
+          <li><%= link_to 'Log In', new_session_path, :class => 'login' %></li>
+        </nav>
       <% end %>
+      <h1>Collaborate</h1>
+      <h3>Work on those side projects. Find people to work with.</h3>
     </header>
 
 
     <%= yield %>
+
+
   </div>
 </body>
 </html>

@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.create(params[:user])
     if @user.errors.empty?
       sign_in(@user)
-      redirect_to user_path(@user.id)
+      redirect_to sessions_path(@user.id)
     else
       flash[:errors] = @user.errors.full_messages
       render :new

@@ -1,12 +1,46 @@
-<% @projects.each do |p| %>
-  <ul class='projectList'>
-    <li>
-      <h1><a href='/projects/<%= p.id %>'><%= p.title %></a></h1>
-      <% if current_user && current_user.id == p.user_id %>
-        <%= link_to 'Update', edit_project_path(p) %>
-        <%= link_to 'Delete', project_path(p), method: 'delete' %>
-      <% end %>
-      <p></p>
-    </li>
+<nav class='row tabs'>
+  <ul>
+    <li class='col-lg-2'>Available Projects</li>
+    <li class='col-lg-2'>Available Talent</li>
   </ul>
-<% end %>
+</nav>
+<div class='row'>
+  <div class='col-lg-7'>
+    <header class='projects col-lg-12 clearfix'>
+      <h2>Available Projects</h2>
+      <%= link_to 'Submit New Project', new_project_path, :class => 'create' %>
+    </header>
+
+    <ul class='projectList col-lg-12'>
+      <% @projects.each do |p| %>
+        <div class='projectEntry row'>
+          <li>
+            <% if p.category == 'Technology' %>
+              <img src='/techIcon.jpg'>
+            <% elsif p.category == 'Arts' %>
+              <img src='/artIcon.jpg'>
+            <% elsif p.category == 'Science' %>
+              <img src='/scienceIcon.jpg'>
+            <% end %>
+            <div class='project'>
+              <h3><a href='/projects/<%= p.id %>'><%= p.title %></a></h3>
+              <h5><%= p.tagline %></h5>
+              <div class='display'>
+                <p>Submitted By: <%= p.user_name %></p>
+                <p>Description: <%= p.description %></p>
+                <p>Project Needs: <%= p.needs %></p>
+                <p>Commitment Level Needed: <%= p.commitment_level %></p>
+                <p>Submission Date: <%= p.created_at %></p>
+              </div>
+            </div>
+
+          </li>
+        </div>
+      <% end %>
+    </ul>
+
+    <div class='col-lg-5'>
+
+    </div>
+  </div>
+</div>

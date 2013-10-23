@@ -2,8 +2,14 @@ class ProjectsController < ApplicationController
   skip_before_filter :authorize, only: [:index]
 
   def index
-    @projects = Project.all
+    @projects = Project.where({status: true})
+
+    @projects.each do |p, _|
+      p[:user_name] = User.find(p.user_id).user_name
+    end
+
     @user = current_user
+
   end
 
   def new

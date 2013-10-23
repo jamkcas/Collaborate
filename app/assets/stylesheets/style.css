@@ -1,0 +1,315 @@
+/* Fonts */
+@font-face {
+    font-family: 'exoextrabold';
+    src: url('/exo-extrabold-webfont.eot');
+    src: url('/exo-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/exo-extrabold-webfont.woff') format('woff'),
+         url('/exo-extrabold-webfont.ttf') format('truetype'),
+         url('/exo-extrabold-webfont.svg#exoextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exoblack';
+    src: url('/exo-black-webfont.eot');
+    src: url('/exo-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/exo-black-webfont.woff') format('woff'),
+         url('/exo-black-webfont.ttf') format('truetype'),
+         url('/exo-black-webfont.svg#exoblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exoregular';
+    src: url('/exo-regular-webfont.eot');
+    src: url('/exo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/exo-regular-webfont.woff') format('woff'),
+         url('/exo-regular-webfont.ttf') format('truetype'),
+         url('/exo-regular-webfont.svg#exoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'colaborate-regularregular';
+    src: url('/ColabReg-webfont.eot');
+    src: url('/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/ColabReg-webfont.woff') format('woff'),
+         url('/ColabReg-webfont.ttf') format('truetype'),
+         url('/ColabReg-webfont.svg#colaborate-regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General */
+
+/**** General ****/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  display: table;
+  content: " ";
+  clear: both;
+  line-height: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  display: inline-table;
+}
+
+body {
+  background: #F1F1F2;
+}
+
+.container {
+
+  font: normal 15px/20px 'colaborate-regularregular', sans-serif;
+}
+
+
+
+/* Header */
+
+.mainHeader {
+  text-align: center;
+
+  background: #34598A;
+}
+
+.mainHeader h1 {
+  font: normal 75px/75px 'exoextrabold', sans-serif;
+  color: #172941;
+  margin-bottom: 10px;
+  clear: both;
+}
+
+.mainHeader h3 {
+  font: normal 28px/28px 'colaborate-regularregular', sans-serif;
+  color: #172941;
+  padding-bottom: 20px;
+}
+
+.mainHeader h5 {
+  float: right;
+  padding: 10px 20px 0 0;
+  font-size: 18px;
+  color: #2AA3D5;
+}
+
+.mainNav {
+  float: right;
+  display: inline-block;
+  list-style: none;
+  clear: both;
+  margin-bottom: 10px;
+}
+
+.mainNav li {
+  float: left;
+  padding: 0 20px;
+}
+
+.login {
+  background: #2B4663;
+  color: #2AA3D5;
+  padding: 10px 30px;
+  font-size: 20px;
+  line-height: 40px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+/* Main Banner */
+
+.mainBanner {
+  padding: 40px;
+}
+
+.left, .right {
+  float: left;
+}
+
+.homeDescription li {
+  padding: 20px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 20px;
+  color: #5B5C5E;
+}
+
+.pictures {
+  text-align: center;
+}
+
+.pictures li img {
+  width: 50%;
+  padding: 10px 0;
+}
+
+.buttons {
+  background: #4E578A;
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 10px;
+  width: 40%;
+  margin: auto;
+  font-size: 25px;
+  color: #FFFFFF;
+}
+
+.buttons a {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+.signUp {
+  text-align: center;
+  font-size: 25px;
+  line-height: 35px;
+  margin: 10px 0 20px 0;
+}
+
+.signUp a {
+  text-decoration: none;
+}
+
+/* Main Body */
+
+.mainBody {
+  padding-bottom: 30px;
+}
+
+.mainBody h3 {
+  font-size: 30px;
+  line-height: 40px;
+  margin: 20px 0 10px 0;
+  color: #5A5B5D;
+}
+
+
+.why ul, .what ul {
+  color: #5A5B5D;
+  list-style: disc;
+  font-size: 20px;
+  line-height: 25px;
+  padding: 30px;
+}
+
+.why ul li, .what ul li {
+  padding: 10px 0;
+}
+
+
+
+
+
+/* Sign-In and Sign-up */
+
+.signin {
+  width: 40%;
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.signin input {
+  padding: 15px;
+  margin: 20px;
+  width: 80%;
+  font-size: 20px;
+}
+
+.signin input:last-child {
+  width: 100px;
+  text-align: center;
+}
+
+
+
+/* Project/Talent */
+
+.tabs {
+  background: #738cad;
+}
+
+.tabs li {
+  padding: 15px 20px;
+}
+
+.activeTab {
+  background: #4B6589;
+}
+
+.projectList {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid black;
+}
+
+.projects {
+  margin: 40px 0;
+}
+
+.projects h2 {
+  font-size: 40px;
+  margin-top: 25px;
+  float: left;
+  color: #5B5C5E;
+}
+
+.create {
+  float: right;
+  background: #4D568C;
+  padding: 15px;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+.projectList img {
+  width: 100px;
+  float: left;
+}
+
+.projectEntry {
+  padding: 20px 0;
+}
+
+.project {
+  float: left;
+}
+
+.project h3 {
+  font-size: 35px;
+  float: left;
+  padding: 10px 20px;
+}
+
+.project h5 {
+  font-size: 25px;
+  float: left;
+  clear: both;
+  padding: 10px 20px;
+}
+
+.project p {
+  float: left;
+  clear: both;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.display {
+  display: none;
+}
