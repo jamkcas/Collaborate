@@ -1,0 +1,77 @@
+/* Header */
+
+.mainHeader {
+  background: #3e4957;
+  position: relative;
+}
+
+.title {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.mainHeader h1 {
+  font: normal 75px/75px 'exoextrabold', sans-serif;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.mainHeader h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mainHeader h3 {
+  font: normal 28px/28px 'colaborate-regularregular', sans-serif;
+  color: #FFFFFF;
+  padding-bottom: 20px;
+}
+
+.mainHeader h5 {
+  padding: 10px 20px 0 0;
+  font-size: 18px;
+  color: #2AA3D5;
+}
+
+.dropdown, .login {
+  position: absolute;
+  right: 30px;
+  top: 0;
+}
+
+.dropdown-menu {
+  position: static;
+  float: right;
+  clear: both;
+}
+
+.login {
+  background: #c6d0de;
+  color: #3E4958;
+  padding: 10px 30px;
+  font-size: 20px;
+  line-height: 40px;
+  margin-right: 20px;
+
+}
+.mainNav li a {
+  text-decoration: none;
+}
+
+.errors {
+  width: 40%;
+  margin: auto;
+  background: #FCED6C;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .mainHeader {
+    text-align: center;
+  }
+
+  .title h3, .login, .dropdown {
+    display: none;
+  }
+}

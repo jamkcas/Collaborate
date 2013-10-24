@@ -1,3 +1,6 @@
+<% if flash[:errors]  %>
+  <p class='errors'><%= flash[:errors] %><p>
+<% end %>
 
 <form class='signin' action='/sessions' method='post'>
   <input type='text' name='user_name' placeholder='Username' />

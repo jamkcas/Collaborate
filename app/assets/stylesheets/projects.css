@@ -1,0 +1,221 @@
+/* Project/Talent */
+
+/*Navigation*/
+
+.tabs {
+  background: #c6d0de;
+}
+
+.navTabs {
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
+.navTabs li {
+  padding: 5px 20px;
+  float: left;
+  display: inline;
+  color: #585858;
+}
+
+.navTabs li a {
+  text-decoration: none;
+}
+
+.activeTab {
+  background: #F1F1F2;
+}
+
+/* Main */
+
+.mainMenu {
+  width: 67%;
+  float: left;
+}
+
+.projectList {
+  padding-top: 20px;
+}
+
+.projects {
+  padding: 30px 0;
+  width: 100%;
+  border-bottom: 1px solid #5B5C5E;
+}
+
+.projects h2 {
+  font-size: 40px;
+  line-height: 40px;
+  margin-top: 15px;
+  float: left;
+  color: #5B5C5E;
+}
+
+.create {
+  float: right;
+  background: #c55387;
+  padding: 15px;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+.create:hover {
+  text-decoration: none;
+  color: #200D3A;
+}
+
+.searchButton {
+  width: 100%;
+}
+
+.searchNav {
+  margin-top: 10px;
+  float: right;
+}
+
+.icon {
+  width: 33%;
+  float: left;
+  padding: 0 20px 0 60px;
+}
+
+.icon img {
+  width: 100%;
+}
+
+.projectEntry {
+  padding: 20px 0;
+  color: #5B5C5E;
+  width: 75%;
+}
+
+.project {
+  width: 67%;
+  float: left;
+}
+
+.project h3 {
+  color: #5E94F3;
+  font-size: 26px;
+  float: left;
+  padding: 0 20px 5px 20px;
+}
+
+.project h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project h3 a:hover {
+  color: #530A52;
+}
+
+.project h5 {
+  font-size: 18px;
+  float: left;
+  clear: both;
+  padding: 0 20px 10px 20px;
+}
+
+.project p {
+  float: left;
+  clear: both;
+  padding: 0 20px 5px 20px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.detail {
+  font-weight: bold;
+}
+
+.display {
+  display: none;
+}
+
+.more {
+  font-size: 12px;
+  color: #5E94F3;
+  margin-left: 5px;
+}
+
+.more:hover {
+  cursor: pointer;
+}
+
+/* Side */
+
+.sideMenu {
+  padding: 50px;
+  width: 33%;
+  float: left;
+}
+
+.menuBody {
+  padding: 20px;
+  font-size: 14px;
+  background: #e0e1e4;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.displayMenu {
+  color: #5B5C5E;
+}
+
+.displayMenu header {
+  padding: 15px;
+  width: 100%;
+  background: #c6d0de;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.displayMenu h3 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.displayMenu h5 {
+  font-size: 16px;
+}
+
+.menuItem {
+  padding: 20px 0;
+}
+
+.menuItem h4 {
+  font-size: 20px;
+  color: #418CCD;
+}
+
+.menuItem h5 {
+  margin: 5px 0;
+}
+
+.menuIcon {
+  width: 33%;
+  float: left;
+  padding: 0 10px 10px 10px;
+}
+
+.menuIcon img {
+  width: 100%;
+}
+
+.menuDetails {
+  width: 67%;
+  float: left;
+}
+
+@media screen and (max-width: 480px) {
+  .mainMenu {
+    width: 100%;
+    float: none;
+  }
+
+  .sideMenu {
+    display: none;
+  }
+}

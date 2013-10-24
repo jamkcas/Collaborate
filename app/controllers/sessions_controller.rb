@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
       redirect_to projects_path
     else
-      flash[:errors] = 'Error'
+      flash[:errors] = "Username or password is incorrect."
       render :new
     end
   end

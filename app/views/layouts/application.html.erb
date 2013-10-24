@@ -7,16 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= flash[:errors] if flash[:errors] %>
+
   <div class='container'>
+
     <header class='mainHeader row'>
-      <div></div>
       <hgroup class='title'>
         <h1><a href='/'>Collaborate</a></h1>
         <h3>Work on those side projects. Find people to work with.</h3>
       </hgroup>
-      <% if current_user %>
 
+      <!-- Login Controls -->
+      <% if current_user %>
         <div class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#"><h5>Welcome, <%= current_user.user_name %><b class="caret"></b></h5>
           </a>
@@ -28,17 +29,17 @@
         </div>
 
       <% else %>
-        <nav class='mainNav'>
-          <li><%= link_to 'Log In', new_session_path, :class => 'login' %></li>
-        </nav>
+        <% if controller.action_name != 'new' %>
+          <nav class='mainNav'>
+            <li><%= link_to 'Log In', new_session_path, :class => 'login' %></li>
+          </nav>
+        <% end %>
       <% end %>
-
-    </header>
-
+    </header> <!-- end mainHeader -->
 
     <%= yield %>
 
+  </div> <!-- end container -->
 
-  </div>
 </body>
 </html>

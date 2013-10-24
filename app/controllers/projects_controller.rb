@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
     end
 
     # Collecting all the skills that are open
-    @skills = Skill.where({status: true})
+    @skills = Skill.where({status: true}).last(5)
 
     # Adding user name to each skill
     @skills.each do |s, _|

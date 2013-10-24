@@ -71,150 +71,13 @@ body {
 }
 
 .container {
-
   font: normal 15px/20px 'colaborate-regularregular', sans-serif;
 }
 
 
 
-/* Header */
-
-.mainHeader {
-  /*text-align: center;*/
-  background: #34598A;
-  position: relative;
-}
-
-.title {
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-.mainHeader h1 {
-  font: normal 75px/75px 'exoextrabold', sans-serif;
-  color: #172941;
-  margin-bottom: 10px;
-  clear: both;
-}
-
-.mainHeader h3 {
-  font: normal 28px/28px 'colaborate-regularregular', sans-serif;
-  color: #172941;
-  padding-bottom: 20px;
-}
-
-.mainHeader h5 {
-
-  padding: 10px 20px 0 0;
-  font-size: 18px;
-  color: #2AA3D5;
-}
-
-.dropdown {
-  position: absolute;
-  right: 30px;
-  top: 0;
-}
-
-.dropdown-menu {
-  position: static;
-  float: right;
-  clear: both;
-}
-
-.login {
-  background: #2B4663;
-  color: #2AA3D5;
-  padding: 10px 30px;
-  font-size: 20px;
-  line-height: 40px;
-  margin-right: 20px;
-  text-decoration: none;
-}
-
-/* Main Banner */
-
-.mainBanner {
-  padding: 40px;
-}
-
-.left, .right {
-  width: 50%;
-  float: left
-}
-
-.homeDescription li {
-  padding: 20px;
-  font-size: 20px;
-  margin-bottom: 20px;
-  line-height: 20px;
-  color: #5B5C5E;
-}
-
-.pictures {
-  text-align: center;
-}
-
-.pictures li img {
-  width: 50%;
-  padding: 10px 0;
-}
-
-.buttons {
-  background: #4E578A;
-  text-align: center;
-  border-radius: 10px;
-  padding: 30px;
-  margin: 10px;
-  width: 40%;
-  margin: auto;
-  font-size: 25px;
-  color: #FFFFFF;
-}
-
-.buttons a {
-  text-decoration: none;
-  list-style: none;
-  color: inherit;
-}
-
-.signUp {
-  text-align: center;
-  font-size: 25px;
-  line-height: 35px;
-  margin: 10px 0 20px 0;
-}
-
-.signUp a {
-  text-decoration: none;
-}
-
-/* Main Body */
-
-.mainBody {
-  padding-bottom: 30px;
-  background: #3E82F7;
-}
-
-.mainBody h3 {
-  font-size: 22px;
-  line-height: 40px;
-  margin: 20px 0 10px 0;
-  color: #5A5B5D;
-}
 
 
-.why ul, .what ul {
-  color: #5A5B5D;
-  list-style: disc;
-  font-size: 16px;
-  line-height: 25px;
-  padding: 20px;
-}
-
-.why ul li, .what ul li {
-  padding: 10px 0;
-}
 
 
 
@@ -242,169 +105,6 @@ body {
 }
 
 
-
-/* Project/Talent */
-
-.tabs {
-  background: #738cad;
-}
-
-.navTabs {
-  margin-top: 10px;
-  padding-left: 30px;
-}
-
-.navTabs li {
-  padding: 5px 20px;
-  float: left;
-  display: inline;
-}
-
-.activeTab {
-  background: #F1F1F2;
-}
-
-.mainMenu {
-  width: 67%;
-  float: left;
-}
-
-.projectList {
-  /*text-align: center;*/
-  padding-top: 40px;
-  border-top: 1px solid black;
-}
-
-.projects {
-  margin: 40px 0;
-}
-
-.projects h2 {
-  font-size: 40px;
-  margin-top: 25px;
-  float: left;
-  color: #5B5C5E;
-}
-
-.create {
-  float: right;
-  background: #4D568C;
-  padding: 15px;
-  border-radius: 8px;
-  color: #FFFFFF;
-  font-size: 20px;
-}
-
-.create:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-.projectList img {
-  margin-left: 50px;
-  width: 150px;
-}
-
-.projectEntry {
-  padding: 20px 0;
-  color: #5B5C5E;
-}
-
-.project h3 {
-  color: #5E94F3;
-  font-size: 26px;
-  float: left;
-  padding: 0 20px 5px 20px;
-}
-
-.project h3 a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.project h3 a:hover {
-  color: #530A52;
-}
-
-.project h5 {
-  font-size: 18px;
-  float: left;
-  clear: both;
-  padding: 0 20px 10px 20px;
-}
-
-.project p {
-  float: left;
-  clear: both;
-  padding: 0 20px 5px 20px;
-  font-size: 14px;
-  line-height: 16px;
-}
-
-.detail {
-  font-weight: bold;
-}
-
-.display {
-  display: none;
-}
-
-
-
-.more {
-  font-size: 12px;
-  color: #5E94F3;
-  margin-left: 5px;
-}
-
-.more:hover {
-  cursor: pointer;
-}
-
-.sideMenu {
-  padding: 50px;
-  width: 33%;
-  float: left;
-}
-
-.displayMenu {
-  padding: 20px;
-  font-size: 14px;
-}
-
-.displayMenu {
-  border: 1px solid black;
-  color: #5B5C5E;
-}
-
-.displayMenu h3 {
-  font-size: 24px;
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 15px;
-}
-
-.displayMenu h5 {
-  font-size: 16px;
-}
-
-.menuItem {
-  padding: 20px 0;
-}
-
-.menuItem h4 {
-  font-size: 20px;
-  color: #418CCD;
-}
-
-.menuItem h5 {
-  margin: 5px 0;
-}
-
-/*.skillEntry p {
-  margin-top: 10px;
-}*/
 
 /* Project Modal */
 
@@ -463,12 +163,11 @@ body {
 }
 
 
-/* New Projects */
+/* New Projects/Skills */
 
 .newP h3 {
   font-size: 40px;
   margin: 20px 10px;
-  /*line-height: 30px;*/
   color: #5B5C5E;
   padding: 20px;
   border-bottom: 1px solid #5B5C5E;
@@ -483,7 +182,14 @@ body {
   font-size: 20px;
 }
 
+.formLeft {
+  width: 33%;
+  float: left;
+}
+
 .formRight {
+  width: 40%;
+  float: left;
   margin-left: 50px;
   padding: 5px;
 }
@@ -494,11 +200,28 @@ body {
 
 .categories {
   float: left;
+  width: 100%;
 }
 
 .categories img {
   width: 75px;
+}
+
+.icons  {
+  position: relative;
+  float: left;
   margin-right: 30px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.iconLabel {
+  position: absolute;
+  width: 75px;
+  height: 20px;
+  background: url('/categoryIcon_label_75x20.png');
+  top: 55px;
+  color: #FFFFFF;
 }
 
 .categories .comLev {
@@ -510,3 +233,5 @@ body {
   text-align: center;
   margin: 30px;
 }
+
+

@@ -61,7 +61,10 @@ $(function(){
   $('.more').on('click', showDetails);
 
   $('.categories').on('click', 'img', check)
-
+  $('.searchNav').change(function() {
+    $('.search').addClass('display');
+    $('.'+$(this).val()).removeClass('display');
+  });
   // $('.navTabs').on('click', '.tab', activeTab)
   // // $('.more').on('mouseout', showDetails);
 

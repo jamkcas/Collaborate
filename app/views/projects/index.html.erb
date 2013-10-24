@@ -7,19 +7,30 @@
 
 <div class='row'> <!-- body -->
   <div class='mainMenu'> <!-- left side -->
-    <header class='projects col-lg-12 clearfix'>
+    <header class='projects clearfix'>
       <h2>Available Projects</h2>
       <%= link_to 'Submit New Project', new_project_path, :class => 'create' %>
     </header>
 
-    <ul class='projectList row'>
+    <div class='searchButton clearfix'>
+      <select class='searchNav'>
+        <option value='technology'>Technology</option>
+        <option value='art'>Art</option>
+        <option value='science'>Science</option>
+        <option value='all' selected='selected'>All</option>
+      </select>
+    </div>
+
+    <!-- All -->
+    <ul class='projectList search all row'>
       <% @projects.each do |p| %>
         <div class='projectEntry row'>
           <li class='row'>
+            <div class='icon clearfix'>
+              <img src='<%= p.image %>'>
+            </div>
 
-            <img class='col-lg-4' src='<%= p.image %>'>
-
-            <div class='project col-lg-8'>
+            <div class='project'>
 
               <% if current_user %>
                 <h3><a id='b' href='#projectDetails' data-toggle="modal" role="button"><%= p.title %></a></h3>
@@ -69,55 +80,244 @@
 
       <% end %>
     </ul> <!-- end projectList -->
-  </div> <!-- end left side -->
 
-  <div class='sideMenu'> <!-- right side -->
-  <div class='displayMenu'>
-  <h3>Available Talent</h3>
-  <h5>Want talented people to work on a project with? Here's some:</h5>
-  <ul>
-    <% @skills.each do |s| %>
-      <li class='menuItem row'>
-        <img src='<%= s.image %>' class='col-lg-5'>
-        <div class='col-lg-7'>
-          <% if current_user %>
-            <h4><a id='b' href='#skillsDetails' data-toggle="modal" role="button"><%= s.user_name %></a></h4>
-          <% else %>
-            <h4><%= s.user_name %></h4>
-          <% end %>
-          <h5><%= s.primary_skill %></h5>
-          <p>Looking for:</p>
-          <p><%= s.interests %></p>
-        </div>
-      </li>
+    <!-- Tech -->
+    <ul class='projectList display search technology row'>
+      <% @projects.each do |p| %>
+        <% if p.category == 'Technology' %>
+        <div class='projectEntry row'>
+          <li class='row'>
+            <div class='icon clearfix'>
+              <img src='<%= p.image %>'>
+            </div>
+
+            <div class='project'>
+
+              <% if current_user %>
+                <h3><a id='b' href='#projectDetails' data-toggle="modal" role="button"><%= p.title %></a></h3>
+              <% else %>
+                <h3><%= p.title %></h3>
+              <% end %>
+
+              <h5><%= p.tagline %></h5>
+              <p><span class='detail'>Submitted By:</span> <%= p.user_name %>, <%= p.created_at %></p>
+              <p><span class='detail'>Role(s) Needed:</span> <%= p.role_needed %></p>
+              <% if p.description.length > 130 %>
+                <p><span class='detail'>Description:</span> <%= p.description[0..130] %><span class='display extended'><%= p.description[131...(p.description.length)] %></span><span class='more'>Read More...</span></p>
+              <% else %>
+                <p><span class='detail'>Description:</span> <%= p.description %></p>
+              <% end %>
+
+            </div> <!-- end project -->
+          </li>
+        </div> <!-- end projectEntry -->
 
       <!-- Modal -->
-        <div class="modal fade" id="skillsDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="projectDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <header class='modalHeader'>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3 class="modal-title"><%= s.user_name %></h3>
-                <h5><%= s.created_at %></h5>
+                <h3 class="modal-title"><%= p.title %></h3>
+                <h5><%= p.user_name %>, <%= p.created_at %></h5>
               </header> <!-- end modalHeader -->
               <div class='modalBody'>
-                <h4><%= s.primary_skill %></h4>
+                <h4><%= p.tagline %></h4>
                 <ul>
-                  <li class='row'><p class='col-lg-3'>Category</p><span class='col-lg-9'><img src='<%= s.image %>'></span></li>
-                  <li class='row'><p class='col-lg-3'>Looking For</p><span class='col-lg-9'><%= s.interests %></span></li>
-                  <li class='row'><p class='col-lg-3'>Secondary Skills</p><span class='col-lg-9'><%= s.skills %></span></li>
-                  <li class='row'><p class='col-lg-3'>Commitment Offered</p><span class='col-lg-9'><%= s.commitment_level %></span></li>
+                  <li class='row'><p class='col-lg-3'>Category</p><span class='col-lg-9'><img src='<%= p.image %>'></span></li>
+                  <li class='row'><p class='col-lg-3'>Role(s) Needed</p><span class='col-lg-9'><%= p.role_needed %></span></li>
+                  <li class='row'><p class='col-lg-3'>Role Details</p><span class='col-lg-9'><%= p.role_details %></span></li>
+                  <li class='row'><p class='col-lg-3'>Description</p><span class='col-lg-9'><%= p.description %></span></li>
+                  <li class='row'><p class='col-lg-3'>Commitment Needed</p><span class='col-lg-9'><%= p.commitment_level %></span></li>
                 </ul>
                 <div class='contactBtn row'>
                   <div class='col-lg-5'></div>
-                  <a href='mailto:<%= s.email %>'><p class='contact'>Contact Owner</p></a>
+                  <a href='mailto:<%= p.email %>'><p class='contact'>Contact Owner</p></a>
                 </div>
               </div> <!-- end modalBody -->
             </div> <!-- end /.modal-content -->
           </div> <!-- end /.modal-dialog -->
         </div> <!-- end /.modal -->
-    <% end %>
-  </ul>
+        <% end %>
+      <% end %>
+    </ul> <!-- end projectList -->
+
+    <!-- Art -->
+    <ul class='projectList display search art row'>
+      <% @projects.each do |p| %>
+        <% if p.category == 'Arts' %>
+        <div class='projectEntry row'>
+          <li class='row'>
+            <div class='icon clearfix'>
+              <img src='<%= p.image %>'>
+            </div>
+
+            <div class='project'>
+
+              <% if current_user %>
+                <h3><a id='b' href='#projectDetails' data-toggle="modal" role="button"><%= p.title %></a></h3>
+              <% else %>
+                <h3><%= p.title %></h3>
+              <% end %>
+
+              <h5><%= p.tagline %></h5>
+              <p><span class='detail'>Submitted By:</span> <%= p.user_name %>, <%= p.created_at %></p>
+              <p><span class='detail'>Role(s) Needed:</span> <%= p.role_needed %></p>
+              <% if p.description.length > 130 %>
+                <p><span class='detail'>Description:</span> <%= p.description[0..130] %><span class='display extended'><%= p.description[131...(p.description.length)] %></span><span class='more'>Read More...</span></p>
+              <% else %>
+                <p><span class='detail'>Description:</span> <%= p.description %></p>
+              <% end %>
+
+            </div> <!-- end project -->
+          </li>
+        </div> <!-- end projectEntry -->
+
+      <!-- Modal -->
+        <div class="modal fade" id="projectDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <header class='modalHeader'>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title"><%= p.title %></h3>
+                <h5><%= p.user_name %>, <%= p.created_at %></h5>
+              </header> <!-- end modalHeader -->
+              <div class='modalBody'>
+                <h4><%= p.tagline %></h4>
+                <ul>
+                  <li class='row'><p class='col-lg-3'>Category</p><span class='col-lg-9'><img src='<%= p.image %>'></span></li>
+                  <li class='row'><p class='col-lg-3'>Role(s) Needed</p><span class='col-lg-9'><%= p.role_needed %></span></li>
+                  <li class='row'><p class='col-lg-3'>Role Details</p><span class='col-lg-9'><%= p.role_details %></span></li>
+                  <li class='row'><p class='col-lg-3'>Description</p><span class='col-lg-9'><%= p.description %></span></li>
+                  <li class='row'><p class='col-lg-3'>Commitment Needed</p><span class='col-lg-9'><%= p.commitment_level %></span></li>
+                </ul>
+                <div class='contactBtn row'>
+                  <div class='col-lg-5'></div>
+                  <a href='mailto:<%= p.email %>'><p class='contact'>Contact Owner</p></a>
+                </div>
+              </div> <!-- end modalBody -->
+            </div> <!-- end /.modal-content -->
+          </div> <!-- end /.modal-dialog -->
+        </div> <!-- end /.modal -->
+        <% end %>
+      <% end %>
+    </ul> <!-- end projectList -->
+
+    <!-- science -->
+    <ul class='projectList display search science row'>
+      <% @projects.each do |p| %>
+        <% if p.category == 'Science' %>
+        <div class='projectEntry row'>
+          <li class='row'>
+            <div class='icon clearfix'>
+              <img src='<%= p.image %>'>
+            </div>
+
+            <div class='project'>
+
+              <% if current_user %>
+                <h3><a id='b' href='#projectDetails' data-toggle="modal" role="button"><%= p.title %></a></h3>
+              <% else %>
+                <h3><%= p.title %></h3>
+              <% end %>
+
+              <h5><%= p.tagline %></h5>
+              <p><span class='detail'>Submitted By:</span> <%= p.user_name %>, <%= p.created_at %></p>
+              <p><span class='detail'>Role(s) Needed:</span> <%= p.role_needed %></p>
+              <% if p.description.length > 130 %>
+                <p><span class='detail'>Description:</span> <%= p.description[0..130] %><span class='display extended'><%= p.description[131...(p.description.length)] %></span><span class='more'>Read More...</span></p>
+              <% else %>
+                <p><span class='detail'>Description:</span> <%= p.description %></p>
+              <% end %>
+
+            </div> <!-- end project -->
+          </li>
+        </div> <!-- end projectEntry -->
+
+      <!-- Modal -->
+        <div class="modal fade" id="projectDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <header class='modalHeader'>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title"><%= p.title %></h3>
+                <h5><%= p.user_name %>, <%= p.created_at %></h5>
+              </header> <!-- end modalHeader -->
+              <div class='modalBody'>
+                <h4><%= p.tagline %></h4>
+                <ul>
+                  <li class='row'><p class='col-lg-3'>Category</p><span class='col-lg-9'><img src='<%= p.image %>'></span></li>
+                  <li class='row'><p class='col-lg-3'>Role(s) Needed</p><span class='col-lg-9'><%= p.role_needed %></span></li>
+                  <li class='row'><p class='col-lg-3'>Role Details</p><span class='col-lg-9'><%= p.role_details %></span></li>
+                  <li class='row'><p class='col-lg-3'>Description</p><span class='col-lg-9'><%= p.description %></span></li>
+                  <li class='row'><p class='col-lg-3'>Commitment Needed</p><span class='col-lg-9'><%= p.commitment_level %></span></li>
+                </ul>
+                <div class='contactBtn row'>
+                  <div class='col-lg-5'></div>
+                  <a href='mailto:<%= p.email %>'><p class='contact'>Contact Owner</p></a>
+                </div>
+              </div> <!-- end modalBody -->
+            </div> <!-- end /.modal-content -->
+          </div> <!-- end /.modal-dialog -->
+        </div> <!-- end /.modal -->
+        <% end %>
+      <% end %>
+    </ul> <!-- end projectList -->
+  </div> <!-- end left side -->
+
+  <div class='sideMenu'> <!-- right side -->
+  <div class='displayMenu'>
+  <header>
+    <h3>Available Talent</h3>
+  </header>
+  <div class='menuBody'>
+    <h5>Want talented people to work on a project with? Here's some:</h5>
+    <ul>
+      <% @skills.each do |s| %>
+        <li class='menuItem row'>
+          <div class='menuIcon'>
+            <img src='<%= s.image %>'>
+          </div>
+          <div class='menuDetails'>
+            <% if current_user %>
+              <h4><a id='b' href='#skillsDetails' data-toggle="modal" role="button"><%= s.user_name %></a></h4>
+            <% else %>
+              <h4><%= s.user_name %></h4>
+            <% end %>
+            <h5><%= s.primary_skill %></h5>
+            <p>Looking for:</p>
+            <p><%= s.interests %></p>
+          </div>
+        </li>
+
+        <!-- Modal -->
+          <div class="modal fade" id="skillsDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <header class='modalHeader'>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3 class="modal-title"><%= s.user_name %></h3>
+                  <h5><%= s.created_at %></h5>
+                </header> <!-- end modalHeader -->
+                <div class='modalBody'>
+                  <h4><%= s.primary_skill %></h4>
+                  <ul>
+                    <li class='row'><p class='col-lg-3'>Category</p><span class='col-lg-9'><img src='<%= s.image %>'></span></li>
+                    <li class='row'><p class='col-lg-3'>Looking For</p><span class='col-lg-9'><%= s.interests %></span></li>
+                    <li class='row'><p class='col-lg-3'>Secondary Skills</p><span class='col-lg-9'><%= s.skills %></span></li>
+                    <li class='row'><p class='col-lg-3'>Commitment Offered</p><span class='col-lg-9'><%= s.commitment_level %></span></li>
+                  </ul>
+                  <div class='contactBtn row'>
+                    <div class='col-lg-5'></div>
+                    <a href='mailto:<%= s.email %>'><p class='contact'>Contact Owner</p></a>
+                  </div>
+                </div> <!-- end modalBody -->
+              </div> <!-- end /.modal-content -->
+            </div> <!-- end /.modal-dialog -->
+          </div> <!-- end /.modal -->
+      <% end %>
+    </ul>
+  </div>
   </div>
 
   </div> <!-- end right side -->

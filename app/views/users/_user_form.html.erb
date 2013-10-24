@@ -1,3 +1,11 @@
+<% if flash[:errors] %>
+  <ul class='errors'>
+    <% flash[:errors].each do |f| %>
+      <li><%= f %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @user, html: {class: 'signin'} do |f| %>
   <%= f.text_field :user_name, placeholder: 'Username' %>
   <%= f.text_field :email, placeholder: 'Email' %>

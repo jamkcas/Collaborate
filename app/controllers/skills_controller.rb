@@ -1,9 +1,9 @@
 class SkillsController < ApplicationController
-  skip_before_filter :authorize, only: [:index, :new, :create]
+  skip_before_filter :authorize, only: [:index]
 
   def index
     # Collecting all the projects that are open
-    @projects = Project.where({status: true})
+    @projects = Project.where({status: true}).last(5)
 
     # Adding user name to each project
     @projects.each do |p, _|

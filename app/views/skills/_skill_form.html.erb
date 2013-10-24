@@ -9,35 +9,52 @@
   <h3>Submit Your Skill Set</h3>
 </header>
 
+<% if flash[:errors] %>
+  <ul class='errors'>
+    <% flash[:errors].each do |f| %>
+      <li><%= f %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @skill, html: {class: 'newProject row'} do |f| %>
   <div class='inputs row'>
-    <%= f.label 'Kinds of projects you are looking to join', :class => 'col-lg-4' %>
-    <%= f.text_field :interests, :class => 'col-lg-5 formRight' %>
+    <%= f.label 'Kinds of projects you are looking to join', :class => 'formLeft' %>
+    <%= f.text_field :interests, :class => 'formRight' %>
   </div>
   <div class='inputs row'>
-    <%= f.label 'Category', :class => 'col-lg-4' %>
-    <div class='category clearfix col-lg-5 formRight'>
+    <%= f.label 'Category', :class => 'formLeft' %>
+    <div class='category clearfix formRight'>
       <div class='categories'>
-        <img src='/categoryIcon_technology_85x85.png' class='icons tech'>
-        <%= f.radio_button(:category, tag_value = "Technology", options = {class: 'checks display'}) %>
-        <img src='/categoryIcon_art_85x85.png' class='icons art'>
-        <%= f.radio_button(:category, tag_value = "Arts", options = {class: 'checks display'}) %>
-        <img src='/categoryIcon_science_85x85.png' class='icons sci'>
-        <%= f.radio_button(:category, tag_value = "Science", options = {class: 'checks display'}) %>
+        <div class='icons'>
+          <img src='/categoryIcon_technology_85x85.png' class='icons tech'>
+          <%= f.radio_button(:category, tag_value = "Technology", options = {class: 'checks display'}) %>
+          <div class='iconLabel'><p>Technology</p></div>
+        </div>
+        <div class='icons'>
+          <img src='/categoryIcon_art_85x85.png' class='icons art'>
+          <%= f.radio_button(:category, tag_value = "Arts", options = {class: 'checks display'}) %>
+          <div class='iconLabel'><p>Art</p></div>
+        </div>
+        <div class='icons'>
+          <img src='/categoryIcon_science_85x85.png' class='icons sci'>
+          <%= f.radio_button(:category, tag_value = "Science", options = {class: 'checks display'}) %>
+          <div class='iconLabel'><p>Science</p></div>
+        </div>
       </div>
     </div>
   </div>
   <div class='inputs row'>
-    <%= f.label 'Primary skill to offer', :class => 'col-lg-4' %>
-    <%= f.text_field :primary_skill, :class => 'col-lg-5 formRight' %>
+    <%= f.label 'Primary skill to offer', :class => 'formLeft' %>
+    <%= f.text_field :primary_skill, :class => 'formRight' %>
   </div>
   <div class='inputs row'>
-    <%= f.label 'Other skills', :class => 'col-lg-4' %>
-    <%= f.text_area :skills, rows: 7,:class => 'col-lg-5 formRight' %>
+    <%= f.label 'Other skills', :class => 'formLeft' %>
+    <%= f.text_area :skills, rows: 7,:class => 'formRight' %>
   </div>
   <div class='inputs row'>
-    <%= f.label 'Commitment Needed', :class => 'col-lg-4' %>
-    <div class='category clearfix col-lg-5 formRight'>
+    <%= f.label 'Commitment Needed', :class => 'formLeft' %>
+    <div class='category clearfix formRight'>
       <div class='categories'>
         <p>Hours Per Week: </p>
         <%= f.radio_button(:commitment_level, tag_value = "1-2", options = {}) %>
@@ -56,8 +73,8 @@
     </div>
   </div>
   <div class='inputs row'>
-    <%= f.label 'Add Search Keywords', :class => 'col-lg-4' %>
-    <%= f.text_field :search_keywords, :class => 'col-lg-5 formRight' %>
+    <%= f.label 'Add Search Keywords', :class => 'formLeft' %>
+    <%= f.text_field :search_keywords, :class => 'formRight' %>
   </div>
   <div class='post'>
     <%= f.submit 'Post Your Skills' %>

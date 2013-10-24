@@ -1,0 +1,110 @@
+/* Main Banner */
+
+.mainBanner {
+  padding: 40px;
+}
+
+.left, .right {
+  width: 50%;
+  float: left;
+}
+
+.homeDescription li {
+  padding: 20px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 20px;
+  color: #5B5C5E;
+}
+
+.pictures {
+  text-align: center;
+}
+
+.pictures li img {
+  width: 50%;
+  padding: 10px 0;
+}
+
+.buttons {
+  background: #4E578A;
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 10px;
+  width: 40%;
+  margin: auto;
+  font-size: 25px;
+  color: #FFFFFF;
+}
+
+.buttons a {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+.signUp {
+  text-align: center;
+  font-size: 25px;
+  line-height: 35px;
+  margin: 10px 0 40px 0;
+}
+
+.signUp a {
+  text-decoration: none;
+}
+
+/* Main Body */
+
+.mainBody {
+  padding: 30px 100px;
+  background: #3E4958;
+  color: #FFFFFF;
+}
+
+.mainBody h3 {
+  font-size: 22px;
+}
+
+.why, .what {
+  padding: 20px 50px;
+}
+
+.why ul, .what ul {
+  list-style: disc;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 10px;
+}
+
+.why ul li, .what ul li {
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 480px) {
+  .mainBanner {
+    text-align: center;
+  }
+  .left, .right {
+    width: 100%;
+    float: none;
+  }
+
+  .buttons {
+    width: 60%;
+  }
+
+  .mainBody {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .mainBody ul {
+    list-style: none;
+  }
+
+  .why, .what {
+    padding: 10px 25px;
+  }
+}
