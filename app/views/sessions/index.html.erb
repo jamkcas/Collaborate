@@ -1,59 +1,60 @@
-<div class='mainBanner row'>
+<div class='container'>
+  <div class='mainBanner row'>
 
-    <div class='left col-lg-5'>
-      <div class='col-lg-4 col-md-5 col-sm-3 col-xs-3'></div>
-      <div class='col-lg-8 col-md-7 col-sm-7 col-xs-7'>
-      <ul class='homeDescription'>
-        <li>Post your projects and connect with people to work on them.</li>
-        <li>Offer your skills to others to help them complete their projects.</li>
-        <li>Be a part of something innovative.</li>
-      </ul>
+      <div class='left'>
+        <ul class='homeDescription'>
+          <li>Post your projects and connect with people to work on them.</li>
+          <li>Offer your skills to others to help them complete their projects.</li>
+          <li>Be a part of something innovative.</li>
+        </ul>
+      </div>
+
+      <div class='right'>
+        <ul class='pictures row'>
+          <li><img src='/banner1.png' ></li>
+          <li><img src='/banner2.png' ></li>
+        </ul>
       </div>
     </div>
 
-    <div class='right col-lg-7'>
-      <ul class='pictures row'>
-        <li class='col-lg-12'><img src='/banner1.png' ></li>
-        <li class='col-lg-12'><img src='/banner2.png' ></li>
-      </ul>
+
+    <div>
+      <div class='buttons'>
+        <%= link_to 'Browse Open Projects', projects_path %>
+      </div>
+      <div class='signUp'>
+        <p>Or <%= link_to 'Sign Up', new_user_path %> to begin posting!</p>
+      </div>
     </div>
   </div>
 
+  <div class='mainBody row'>
 
-  <div class='col-lg-12'>
-    <div class='buttons'>
-      <%= link_to 'Browse Open Projects', projects_path %>
-    </div>
-    <div class='signUp'>
-      <p>Or <%= link_to 'Sign Up', new_user_path %> to begin posting!</p>
-    </div>
+      <div class='left why'>
+        <h3>Why Collaborate?</h3>
+
+        <ul>
+          <li>You need help on that project you working on, be it a side project or something you have always wanted to do.</li>
+          <li>You have a special skill, and you want to help others.</li>
+          <li>You want to learn a new skill by working with someone else, amateur or professional.</li>
+          <li>You want to experience or create something new.</li>
+        </ul>
+      </div>
+
+
+
+      <div class='what right'>
+        <h3>What Can I Collaborate On?</h3>
+
+        <ul>
+          <li>Anything!</li>
+          <li>Write a work of fiction.</li>
+          <li>Work on a film.</li>
+          <li>Go on a photography expedition.</li>
+          <li>Learn to code with someone, and build an app.</li>
+        </ul>
+      </div>
+
+
   </div>
 </div>
-
-<div class='mainBody row'>
-  <div class='col-lg-1 col-md-2 col-sm-2 col-xs-2'></div>
-  <div class='left why col-lg-5 col-md-9 col-sm-8 col-xs-8'>
-    <h3>Why Collaborate?</h3>
-
-    <ul>
-      <li>You need help on that project you working on, be it a side project or something you have always wanted to do.</li>
-      <li>You have a special skill, and you want to help others.</li>
-      <li>You want to learn a new skill by working with someone else, amateur or professional.</li>
-      <li>You want to experience or create something new.</li>
-    </ul>
-  </div>
-
-  <div class='col-lg-1 col-md-2 col-sm-2 col-xs-2'></div>
-  <div class='right what col-lg-5 col-md-9 col-sm-8 col-xs-8'>
-    <h3>What Can I Collaborate On?</h3>
-
-    <ul>
-      <li>Anything!</li>
-      <li>Write a work of fiction.</li>
-      <li>Work on a film.</li>
-      <li>Go on a photography expedition.</li>
-      <li>Learn to code with someone, and build an app.</li>
-    </ul>
-  </div>
-</div>
-

@@ -10,20 +10,29 @@
 <%= flash[:errors] if flash[:errors] %>
   <div class='container'>
     <header class='mainHeader row'>
+      <div></div>
+      <hgroup class='title'>
+        <h1><a href='/'>Collaborate</a></h1>
+        <h3>Work on those side projects. Find people to work with.</h3>
+      </hgroup>
       <% if current_user %>
-        <h5>Welcome, <%= current_user.user_name %></h5>
-        <nav class='mainNav'>
-          <li><%= link_to 'Logout', logout_path %></li>
-          <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
-          <li><%= link_to 'Create Project', new_project_path %></li>
-        </nav>
+
+        <div class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#"><h5>Welcome, <%= current_user.user_name %><b class="caret"></b></h5>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dLabel">
+            <li><%= link_to 'Logout', logout_path %></li>
+            <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
+            <li><%= link_to 'Create Project', new_project_path %></li>
+          </ul>
+        </div>
+
       <% else %>
         <nav class='mainNav'>
           <li><%= link_to 'Log In', new_session_path, :class => 'login' %></li>
         </nav>
       <% end %>
-      <h1>Collaborate</h1>
-      <h3>Work on those side projects. Find people to work with.</h3>
+
     </header>
 
 

@@ -1,5 +1,5 @@
-class ProjectsController < ApplicationController
-  skip_before_filter :authorize, only: [:index]
+class SkillsController < ApplicationController
+  skip_before_filter :authorize, only: [:index, :new, :create]
 
   def index
     # Collecting all the projects that are open
@@ -40,41 +40,36 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = Project.new
-  end
-
-  def show
-    @project = Project.find(params[:id])
-    @project_user = User.find(@project.user)
+    @skill = Skill.new
   end
 
   def create
-    @project = Project.create(params[:project])
-    if @project.errors.empty?
-      # Adding current user id to the user_id foreign key in projects table
-      @project.user = current_user
-      @project.save
+    @skill = Skill.create(params[:skill])
+    if @skill.errors.empty?
+      # Adding current user id to the user_id foreign key in skills table
+      @skill.user = current_user
+      @skill.save
 
       redirect_to projects_path
     else
-      flash[:errors] = @project.errors.full_messages
+      flash[:errors] = @skill.errors.full_messages
       render :new
     end
   end
 
   def edit
-    @project = Project.find(params[:id])
+    @skill = Skill.find(params[:id])
   end
 
   def update
-    @project = Project.find(params[:id])
-    @project.update_attributes(params[:project])
+    @skill = Skill.find(params[:id])
+    @skill.update_attributes(params[:skill])
 
     redirect_to projects_path
   end
 
   def destroy
-    Project.delete(params[:id])
+    Skill.delete(params[:id])
 
     redirect_to projects_path
   end

@@ -80,9 +80,14 @@ body {
 /* Header */
 
 .mainHeader {
-  text-align: center;
-
+  /*text-align: center;*/
   background: #34598A;
+  position: relative;
+}
+
+.title {
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .mainHeader h1 {
@@ -99,23 +104,22 @@ body {
 }
 
 .mainHeader h5 {
-  float: right;
+
   padding: 10px 20px 0 0;
   font-size: 18px;
   color: #2AA3D5;
 }
 
-.mainNav {
-  float: right;
-  display: inline-block;
-  list-style: none;
-  clear: both;
-  margin-bottom: 10px;
+.dropdown {
+  position: absolute;
+  right: 30px;
+  top: 0;
 }
 
-.mainNav li {
-  float: left;
-  padding: 0 20px;
+.dropdown-menu {
+  position: static;
+  float: right;
+  clear: both;
 }
 
 .login {
@@ -135,7 +139,8 @@ body {
 }
 
 .left, .right {
-  float: left;
+  width: 50%;
+  float: left
 }
 
 .homeDescription li {
@@ -188,10 +193,11 @@ body {
 
 .mainBody {
   padding-bottom: 30px;
+  background: #3E82F7;
 }
 
 .mainBody h3 {
-  font-size: 30px;
+  font-size: 22px;
   line-height: 40px;
   margin: 20px 0 10px 0;
   color: #5A5B5D;
@@ -201,9 +207,9 @@ body {
 .why ul, .what ul {
   color: #5A5B5D;
   list-style: disc;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 25px;
-  padding: 30px;
+  padding: 20px;
 }
 
 .why ul li, .what ul li {
@@ -243,16 +249,28 @@ body {
   background: #738cad;
 }
 
-.tabs li {
-  padding: 15px 20px;
+.navTabs {
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
+.navTabs li {
+  padding: 5px 20px;
+  float: left;
+  display: inline;
 }
 
 .activeTab {
-  background: #4B6589;
+  background: #F1F1F2;
+}
+
+.mainMenu {
+  width: 67%;
+  float: left;
 }
 
 .projectList {
-  text-align: center;
+  /*text-align: center;*/
   padding-top: 40px;
   border-top: 1px solid black;
 }
@@ -277,39 +295,218 @@ body {
   font-size: 20px;
 }
 
+.create:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 .projectList img {
-  width: 100px;
-  float: left;
+  margin-left: 50px;
+  width: 150px;
 }
 
 .projectEntry {
   padding: 20px 0;
-}
-
-.project {
-  float: left;
+  color: #5B5C5E;
 }
 
 .project h3 {
-  font-size: 35px;
+  color: #5E94F3;
+  font-size: 26px;
   float: left;
-  padding: 10px 20px;
+  padding: 0 20px 5px 20px;
+}
+
+.project h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project h3 a:hover {
+  color: #530A52;
 }
 
 .project h5 {
-  font-size: 25px;
+  font-size: 18px;
   float: left;
   clear: both;
-  padding: 10px 20px;
+  padding: 0 20px 10px 20px;
 }
 
 .project p {
   float: left;
   clear: both;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 0 20px 5px 20px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.detail {
+  font-weight: bold;
 }
 
 .display {
   display: none;
+}
+
+
+
+.more {
+  font-size: 12px;
+  color: #5E94F3;
+  margin-left: 5px;
+}
+
+.more:hover {
+  cursor: pointer;
+}
+
+.sideMenu {
+  padding: 50px;
+  width: 33%;
+  float: left;
+}
+
+.displayMenu {
+  padding: 20px;
+  font-size: 14px;
+}
+
+.displayMenu {
+  border: 1px solid black;
+  color: #5B5C5E;
+}
+
+.displayMenu h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.displayMenu h5 {
+  font-size: 16px;
+}
+
+.menuItem {
+  padding: 20px 0;
+}
+
+.menuItem h4 {
+  font-size: 20px;
+  color: #418CCD;
+}
+
+.menuItem h5 {
+  margin: 5px 0;
+}
+
+/*.skillEntry p {
+  margin-top: 10px;
+}*/
+
+/* Project Modal */
+
+.modalHeader {
+  padding: 10px 20px;
+  border-bottom: 1px solid #363633;
+  color: #5B5C5E;
+}
+
+.modalHeader h3 {
+  font-size: 30px;
+  color: #418CCD;
+}
+
+.modalHeader h5 {
+  font-size: 18px;
+}
+
+.modalHeader img {
+  width: 75px;
+}
+
+.modalBody {
+  padding: 10px 20px;
+  color: #5B5C5E;
+  font-size: 14px;
+}
+
+.modalBody h4 {
+  font-size: 24px;
+}
+
+.modalBody img {
+  width: 75px;
+  padding-right: 20px;
+  margin: 0;
+}
+
+.modal li {
+  margin: 40px 0;
+}
+
+.modal .contact {
+  background: #B9B9B9;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline;
+}
+
+.contactBtn {
+  margin-bottom: 20px;
+}
+
+.contactBtn a {
+  text-decoration: none;
+}
+
+
+/* New Projects */
+
+.newP h3 {
+  font-size: 40px;
+  margin: 20px 10px;
+  /*line-height: 30px;*/
+  color: #5B5C5E;
+  padding: 20px;
+  border-bottom: 1px solid #5B5C5E;
+}
+
+.newProject {
+  color: #5B5C5E;
+}
+
+.newProject label {
+  text-align: right;
+  font-size: 20px;
+}
+
+.formRight {
+  margin-left: 50px;
+  padding: 5px;
+}
+
+.inputs {
+  padding: 20px;
+}
+
+.categories {
+  float: left;
+}
+
+.categories img {
+  width: 75px;
+  margin-right: 30px;
+}
+
+.categories .comLev {
+  font-size: 14px;
+  margin: 10px;
+}
+
+.post {
+  text-align: center;
+  margin: 30px;
 }

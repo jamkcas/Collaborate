@@ -1,22 +1,18 @@
 <nav class='row tabs'>
   <ul class='navTabs clearfix'>
-    <li class='tab activeTab'>Available Projects</li>
-    <li class='tab'><%= link_to 'Available Talent', skills_path %></li>
+    <li class='tab'><%= link_to 'Available Projects', projects_path %></a></li>
+    <li class='tab activeTab'>Available Talent</li>
   </ul>
 </nav>
 
 <header class='newP row'>
-  <h3>Submit Your Project</h3>
+  <h3>Submit Your Skill Set</h3>
 </header>
 
-<%= form_for @project, html: {class: 'newProject row'} do |f| %>
+<%= form_for @skill, html: {class: 'newProject row'} do |f| %>
   <div class='inputs row'>
-    <%= f.label 'Title', :class => 'col-lg-4' %>
-    <%= f.text_field :title, :class => 'col-lg-5 formRight' %>
-  </div>
-  <div class='inputs row'>
-    <%= f.label 'Tagline', :class => 'col-lg-4' %>
-    <%= f.text_field :tagline, :class => 'col-lg-5 formRight' %>
+    <%= f.label 'Kinds of projects you are looking to join', :class => 'col-lg-4' %>
+    <%= f.text_field :interests, :class => 'col-lg-5 formRight' %>
   </div>
   <div class='inputs row'>
     <%= f.label 'Category', :class => 'col-lg-4' %>
@@ -32,16 +28,12 @@
     </div>
   </div>
   <div class='inputs row'>
-    <%= f.label 'Description', :class => 'col-lg-4' %>
-    <%= f.text_area :description, rows: 7,:class => 'col-lg-5 formRight' %>
+    <%= f.label 'Primary skill to offer', :class => 'col-lg-4' %>
+    <%= f.text_field :primary_skill, :class => 'col-lg-5 formRight' %>
   </div>
   <div class='inputs row'>
-    <%= f.label 'Role(s) Needed', :class => 'col-lg-4' %>
-    <%= f.text_field :role_needed, :class => 'col-lg-5 formRight' %>
-  </div>
-  <div class='inputs row'>
-    <%= f.label 'Role Details', :class => 'col-lg-4' %>
-    <%= f.text_area :role_details, rows: 5, :class => 'col-lg-5 formRight' %>
+    <%= f.label 'Other skills', :class => 'col-lg-4' %>
+    <%= f.text_area :skills, rows: 7,:class => 'col-lg-5 formRight' %>
   </div>
   <div class='inputs row'>
     <%= f.label 'Commitment Needed', :class => 'col-lg-4' %>
@@ -68,6 +60,7 @@
     <%= f.text_field :search_keywords, :class => 'col-lg-5 formRight' %>
   </div>
   <div class='post'>
-    <%= f.submit 'Post Project' %>
+    <%= f.submit 'Post Your Skills' %>
   </div>
 <% end %>
+

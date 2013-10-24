@@ -5,10 +5,11 @@ class CreateProjects < ActiveRecord::Migration
       t.string :tagline
       t.string :category
       t.text :description
-      t.text :needs
+      t.string :role_needed
+      t.text :role_details
       t.string :commitment_level
       t.boolean :status, default: true
-      t.text :search_keywords
+      t.string :search_keywords
       t.references :user
       t.timestamps
     end

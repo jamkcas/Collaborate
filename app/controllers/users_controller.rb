@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = current_user
+    @user = current_user
 
   end
 
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.create(params[:user])
     if @user.errors.empty?
       sign_in(@user)
+
       redirect_to sessions_path(@user.id)
     else
       flash[:errors] = @user.errors.full_messages
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
     @user.update_attributes(params[:user])
     if @user.errors.empty?
       sign_in(@user)
+
       redirect_to @user
     else
       flash[:errors] = @user.errors.full_messages

@@ -11,18 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131021171210) do
+ActiveRecord::Schema.define(:version => 20131023031918) do
 
   create_table "projects", :force => true do |t|
     t.string   "title"
     t.string   "tagline"
     t.string   "category"
     t.text     "description"
-    t.text     "needs"
+    t.string   "role_needed"
+    t.text     "role_details"
     t.string   "commitment_level"
     t.boolean  "status",           :default => true
-    t.text     "search_keywords"
+    t.string   "search_keywords"
     t.integer  "user_id"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  create_table "skills", :force => true do |t|
+    t.string   "primary_skill"
+    t.string   "skills"
+    t.string   "commitment_level"
+    t.string   "category"
+    t.string   "search_keywords"
+    t.string   "interests"
+    t.integer  "user_id"
+    t.boolean  "status",           :default => true
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
   end

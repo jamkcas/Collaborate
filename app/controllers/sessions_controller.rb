@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
     @user = User.find_by_user_name(params[:user_name])
     if @user && @user.authenticate(params[:password])
       sign_in(@user)
-      redirect_to projects_path(@user)
+
+      redirect_to projects_path
     else
       flash[:errors] = 'Error'
       render :new
@@ -22,6 +23,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
+
     redirect_to new_session_path
   end
 end
