@@ -210,12 +210,42 @@
 }
 
 @media screen and (max-width: 480px) {
-  .mainMenu {
+  .navTabs {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .navTabs li {
+    width: 50%;
+    margin-top: -10px;
+  }
+
+  .mainWindow .mainMenu {
     width: 100%;
     float: none;
+    padding: 0 20px;
   }
 
   .sideMenu {
     display: none;
+  }
+
+  .projects {
+    text-align: center;
+  }
+
+  .projects h2 {
+    margin-top: 0;
+    float: none;
+    margin-bottom: 30px;
+  }
+
+  .create {
+    float: none;
+  }
+
+  .projectEntry {
+    width: 100%;
   }
 }
