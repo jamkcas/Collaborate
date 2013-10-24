@@ -209,7 +209,7 @@
   float: left;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
   .navTabs {
     width: 100%;
     padding: 0;
