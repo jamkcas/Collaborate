@@ -50,7 +50,7 @@ class SkillsController < ApplicationController
       @skill.user = current_user
       @skill.save
 
-      redirect_to projects_path
+      redirect_to skills_path
     else
       flash[:errors] = @skill.errors.full_messages
       render :new
@@ -65,7 +65,7 @@ class SkillsController < ApplicationController
     @skill = Skill.find(params[:id])
     @skill.update_attributes(params[:skill])
 
-    redirect_to projects_path
+    redirect_to skills_path
   end
 
   def destroy

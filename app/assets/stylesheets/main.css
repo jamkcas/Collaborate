@@ -79,7 +79,7 @@
     text-align: center;
   }
 
-  .title h3, .login, .dropdown {
+  .title h3, .login, .dropdown, .mainNav {
     display: none;
   }
 

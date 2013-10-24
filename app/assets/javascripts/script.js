@@ -1,21 +1,13 @@
-// tabs = document.getElementsByClassName('tab');
+
+var artSrc = ['/categoryIcon_art_85x85.png', '/categoryIcon_art_85x85_selected.png'];
+var techSrc = ['/categoryIcon_technology_85x85.png', '/categoryIcon_technology_85x85_selected.png'];
+var sciSrc = ['/categoryIcon_science_85x85.png', '/categoryIcon_science_85x85_selected.png'];
 
 var showDetails = function(e) {
   test = e.currentTarget.previousSibling;
   jQuery(test).toggleClass('display');
 };
 
-// var activeTab = function(e) {
-//   $('.tab').each(function(){
-
-//       $(this).removeClass('activeTab');
-//     });
-//   // if(!($(this).hasClass('activeTab'))) {
-//     $(this).toggleClass('activeTab');
-var artSrc = ['/categoryIcon_art_85x85.png', '/categoryIcon_art_85x85_selected.png'];
-var techSrc = ['/categoryIcon_technology_85x85.png', '/categoryIcon_technology_85x85_selected.png'];
-var sciSrc = ['/categoryIcon_science_85x85.png', '/categoryIcon_science_85x85_selected.png'];
-//   // }
 var check = function(e) {
   $('.checks').each(function() {
     $(this).attr('checked', false);
@@ -38,25 +30,10 @@ var check = function(e) {
   console.log($(this).next());
 };
 
-// }
-// var showWindow = function() {
-//   // debugger;
-//   // $('#projectDetails').modal('show');
-// }
-// var closeWindow = function() {
-//   $('#projectDetails').modal('hide');
-// }
-// var displayProject = function(event) {
-//   rest = $(event.currentTarget).children()[1].lastChild.previousSibling;
-//   jQuery(rest).toggleClass("display");
-// };
-
-
+// On Start
 $(function(){
-  // $('.projectEntry').on('mouseover', 'li', displayProject);
-  // $('.projectEntry').on('mouseout', 'li', displayProject);
+
   $('.dropdown-toggle').dropdown();
-  // $('#projectDetails').on('click', modal('toggle'));
 
   $('.more').on('click', showDetails);
 
@@ -65,9 +42,4 @@ $(function(){
     $('.search').addClass('display');
     $('.'+$(this).val()).removeClass('display');
   });
-  // $('.navTabs').on('click', '.tab', activeTab)
-  // // $('.more').on('mouseout', showDetails);
-
-  // // $('#b').on('click', showWindow);
-  // $('#q').on('click', closeWindow);
 });
