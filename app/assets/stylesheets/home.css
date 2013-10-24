@@ -82,7 +82,7 @@
   padding: 10px 0;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .mainBanner {
     text-align: center;
   }
