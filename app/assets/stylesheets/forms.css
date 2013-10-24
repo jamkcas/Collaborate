@@ -19,6 +19,7 @@
   text-align: center;
 }
 
+
 /* New Projects/Skills */
 
 .newP h3 {
@@ -114,5 +115,9 @@
 
   .newProject .inputs {
     padding: 15px 30px;
+  }
+
+  .signin {
+    width: 80%;
   }
 }

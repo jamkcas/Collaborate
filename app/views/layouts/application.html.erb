@@ -11,6 +11,13 @@
   <div class='container'>
 
     <header class='mainHeader row'>
+      <!-- Mobile Logout -->
+      <% if current_user %>
+        <div class='logout'>
+          <%= link_to 'Logout', logout_path %>
+        </div>
+      <% end %>
+
       <hgroup class='title'>
         <h1><a href='/'>Collaborate</a></h1>
         <h3>Work on those side projects. Find people to work with.</h3>
@@ -35,6 +42,8 @@
           </nav>
         <% end %>
       <% end %>
+
+
     </header> <!-- end mainHeader -->
 
     <%= yield %>

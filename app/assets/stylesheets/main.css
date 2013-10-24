@@ -54,6 +54,14 @@
   margin-right: 20px;
 
 }
+
+.logout a {
+  display: none;
+  background: #c6d0de;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
 .mainNav li a {
   text-decoration: none;
 }
@@ -73,5 +81,9 @@
 
   .title h3, .login, .dropdown {
     display: none;
+  }
+
+  .logout a {
+    display: inline;
   }
 }
