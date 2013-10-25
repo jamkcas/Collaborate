@@ -121,3 +121,19 @@
     width: 80%;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .newP h3 {
+    font-size: 29px;
+  }
+
+  .icons {
+    margin-right: 8px;
+  }
+
+  .categories .comLev {
+    margin: 7px;
+  }
+}
+
+

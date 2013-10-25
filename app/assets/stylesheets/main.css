@@ -74,6 +74,16 @@
   border-radius: 10px;
 }
 
+@media screen and (max-width: 320px) {
+  .mainHeader h1 {
+    font-size: 55px;
+  }
+
+  .title {
+    margin: 0;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .mainHeader {
     text-align: center;

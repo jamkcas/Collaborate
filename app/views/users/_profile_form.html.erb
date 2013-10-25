@@ -1,3 +1,25 @@
 <%= form_for @profile do |f| %>
   <%= f.label 'First Name' %>
   <%= f.label 'Last Name' %>
+  <%= f.label 'Profile Picture' %>
+  <% if controller.action_name == 'edit_profile' %>
+    <p>Change Password</p>
+    <div class='pw display'>
+      <%= form_for @user do |f| %>
+        <%= f.text_field :password, placeholder: 'New Password' %>
+        <%= f.text_field :password_confirmation, placeholder: 'Confirm Password' %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  <% end %>
+  <%= f.label 'Address 1' %>
+  <%= f.label 'Address 2' %>
+  <%= f.label 'City' %>
+  <%= f.label 'State' %>
+  <%= f.label 'Zip Code' %>
+  <% f.label 'Phone Number' %>
+  <% f.label 'Facebook Page', placeholder: 'Optional' %>
+  <% f.label 'Twitter Page', placeholder: 'Optional' %>
+  <% f.label 'LinkedIn Page', placeholder: 'Optional' %>
+  <% f.label 'Portfolio', placeholder: 'Optional' %>
+<% end %>
