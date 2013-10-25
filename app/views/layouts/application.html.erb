@@ -51,9 +51,9 @@
 
       <% else %>
         <% if controller.action_name != 'new' %>
-          <nav class='mainNav'>
-            <li><%= link_to 'Log In', new_session_path, :class => 'login' %></li>
-          </nav>
+          <div class="dropdown log">
+              <%= link_to 'Log In', new_session_path %>
+          </div>
         <% end %>
       <% end %>
     </header> <!-- end mainHeader -->
