@@ -1,31 +1,40 @@
 <div class='container'>
   <div class='mainBanner row'>
 
+      <div class='right top'>
+        <ul class='pictures row'>
+          <li><img src='/homepage_ux-dev.jpg' ></li>
+          <li><img src='/homepage_writer-illus.jpg' ></li>
+          <li><img src='/homepage_dev-dev.jpg' ></li>
+        </ul>
+      </div>
+
       <div class='left'>
         <ul class='homeDescription'>
           <li>Post your projects and connect with people to work on them.</li>
           <li>Offer your skills to others to help them complete their projects.</li>
           <li>Be a part of something innovative.</li>
         </ul>
+
+        <div class='buttons'>
+          <%= link_to 'Browse Open Projects', projects_path %>
+        </div>
+        <div class='signUp'>
+          <p>Or <%= link_to 'Sign Up', new_user_path %> to begin posting!</p>
+        </div>
+
       </div>
 
-      <div class='right'>
+      <div class='right bottom'>
         <ul class='pictures row'>
-          <li><img src='/banner1.png' ></li>
-          <li><img src='/banner2.png' ></li>
+          <li><img src='/homepage_ux-dev.jpg' ></li>
+          <li><img src='/homepage_writer-illus.jpg' ></li>
+          <li><img src='/homepage_dev-dev.jpg' ></li>
         </ul>
       </div>
-    </div>
 
 
-    <div>
-      <div class='buttons'>
-        <%= link_to 'Browse Open Projects', projects_path %>
-      </div>
-      <div class='signUp'>
-        <p>Or <%= link_to 'Sign Up', new_user_path %> to begin posting!</p>
-      </div>
-    </div>
+
   </div>
 
   <div class='mainBody row'>
@@ -41,8 +50,6 @@
         </ul>
       </div>
 
-
-
       <div class='what right'>
         <h3>What Can I Collaborate On?</h3>
 
@@ -54,7 +61,6 @@
           <li>Learn to code with someone, and build an app.</li>
         </ul>
       </div>
-
 
   </div>
 </div>

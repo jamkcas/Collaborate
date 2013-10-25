@@ -5,7 +5,7 @@ class SkillsController < ApplicationController
     # Collecting all the projects that are open
     @projects = Project.where({status: true}).last(5)
 
-    # Adding user name to each project
+    # Adding user name, email, and image source to each project
     @projects.each do |p, _|
       p[:user_name] = User.find(p.user_id).user_name
       p[:email] = User.find(p.user_id).email
@@ -21,7 +21,7 @@ class SkillsController < ApplicationController
     # Collecting all the skills that are open
     @skills = Skill.where({status: true})
 
-    # Adding user name to each skill
+    # Adding user name, email, and image source to each skill
     @skills.each do |s, _|
       s[:user_name] = User.find(s.user_id).user_name
       s[:email] = User.find(s.user_id).email
@@ -65,13 +65,13 @@ class SkillsController < ApplicationController
     @skill = Skill.find(params[:id])
     @skill.update_attributes(params[:skill])
 
-    redirect_to skills_path
+    redirect_to my_posts_path
   end
 
   def destroy
     Skill.delete(params[:id])
 
-    redirect_to projects_path
+    redirect_to my_posts_path
   end
 
 end

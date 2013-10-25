@@ -91,6 +91,9 @@
   margin: 30px;
 }
 
+
+/* Mobile Media Queries */
+
 @media screen and (max-width: 480px) {
   .newProject {
     width: 100%;

@@ -11,9 +11,9 @@
 
 .homeDescription li {
   padding: 20px;
-  font-size: 20px;
+  font-size: 26px;
   margin-bottom: 20px;
-  line-height: 20px;
+  line-height: 32px;
   color: #5B5C5E;
 }
 
@@ -26,13 +26,17 @@
   padding: 10px 0;
 }
 
+.top {
+  display: none;
+}
+
 .buttons {
-  background: #4E578A;
+  background: #C75187;
   text-align: center;
   border-radius: 10px;
   padding: 30px;
   margin: 10px;
-  width: 40%;
+  width: 60%;
   margin: auto;
   font-size: 25px;
   color: #FFFFFF;
@@ -53,6 +57,7 @@
 
 .signUp a {
   text-decoration: none;
+  color: #C75187;
 }
 
 /* Main Body */
@@ -82,19 +87,15 @@
   padding: 10px 0;
 }
 
-
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 990px) {
   .mainBanner {
     text-align: center;
+    padding: 40px 0 20px 0;
   }
+
   .left, .right {
     width: 100%;
     float: none;
-  }
-
-  .buttons {
-    width: 60%;
   }
 
   .mainBody {
@@ -106,16 +107,26 @@
     list-style: none;
   }
 
+  .top {
+    display: block;
+  }
+
+  .bottom {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .buttons {
+    width: 100%;
+  }
+
   .why, .what {
     padding: 10px 25px;
   }
 }
 
 @media screen and (max-width: 320px) {
-
-  .buttons {
-    width: 80%;
-  }
 
   .container .mainBanner {
     padding: 10px 0;

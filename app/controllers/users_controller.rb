@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorize, only: [:new, :create]
+  skip_before_filter :authorize, only: [:new, :create, :my_posts]
 
   def new
     @user = User.new
@@ -42,6 +42,19 @@ class UsersController < ApplicationController
   def destroy
     # Project.delete(params[:id])
     # redirect_to
+  end
+
+  def my_posts
+    @projects = Project.where({user_id: current_user.id})
+    @skills = Skill.where({user_id: current_user.id})
+
+    @projects.each do |p, _|
+      p[:user_name] = current_user.user_name
+    end
+
+    @skills.each do |s, _|
+      s[:user_name] = current_user.user_name
+    end
   end
 
 end

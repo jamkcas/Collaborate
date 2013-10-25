@@ -31,6 +31,7 @@
 .mainMenu {
   width: 67%;
   float: left;
+  padding-left: 50px;
 }
 
 .projectList {
@@ -209,7 +210,23 @@
   float: left;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 992px) {
+  .sideMenu {
+    display: none;
+  }
+
+  .mainWindow .mainMenu {
+    width: 100%;
+    float: none;
+    padding: 0 20px;
+  }
+
+  .projectEntry {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 610px) {
   .navTabs {
     width: 100%;
     padding: 0;
@@ -219,16 +236,6 @@
   .navTabs li {
     width: 50%;
     margin-top: -10px;
-  }
-
-  .mainWindow .mainMenu {
-    width: 100%;
-    float: none;
-    padding: 0 20px;
-  }
-
-  .sideMenu {
-    display: none;
   }
 
   .projects {
@@ -244,10 +251,6 @@
   .create {
     float: none;
   }
-
-  .projectEntry {
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -258,5 +261,11 @@
 
   .project h3, .project h5, .project p {
     padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navTabs .tab {
+    padding: 5px 0;
   }
 }

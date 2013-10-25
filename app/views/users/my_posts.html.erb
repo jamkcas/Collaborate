@@ -1,0 +1,34 @@
+<nav class='row tabs'>
+  <ul class='navTabs clearfix'>
+    <li class='tab'><%= link_to 'Available Projects', projects_path %></a></li>
+    <li class='tab'><%= link_to 'Available Talent', skills_path %></li>
+  </ul>
+</nav>
+
+<div class='myWindow'>
+  <h3>My Project Submissions</h3>
+
+  <ul>
+    <% @projects.reverse.each do |p| %>
+        <li class='myProjects clearfix'>
+          <h5><a href='/projects/<%= p.id %>/edit'><%= p.title %></a></h5>
+          <p><%= link_to 'Delete', project_path(p), :method => 'delete' %></p>
+          <p><a href='/projects/<%= p.id %>/edit'>Update</a></p>
+        </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class='myWindow'>
+  <h3>My Skill Submissions</h3>
+
+  <ul>
+    <% @skills.reverse.each do |s| %>
+      <li class='myProjects clearfix'>
+        <h5><a href='/projects/<%= s.id %>/edit'><%= s.interests %></a></h5>
+        <p><%= link_to 'Delete', skill_path(s), :method => 'delete' %></p>
+        <p><a href='/projects/<%= s.id %>/edit'>Update</a></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

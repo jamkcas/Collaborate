@@ -1,5 +1,12 @@
-<%= form_for @user do |f| %>
+<nav class='row tabs'>
+  <ul class='navTabs clearfix'>
+    <li class='tab'><%= link_to 'Available Projects', projects_path %></a></li>
+    <li class='tab'><%= link_to 'Available Talent', skills_path %></li>
+  </ul>
+</nav>
+
+<%= form_for @user, html: {class: 'signin'} do |f| %>
   <%= f.password_field :password, placeholder: 'Password' %>
   <%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %>
-  <%= f.submit 'Change Password' %>
+  <%= f.submit 'Change' %>
 <% end %>

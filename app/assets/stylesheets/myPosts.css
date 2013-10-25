@@ -1,0 +1,59 @@
+.myWindow {
+  float: left;
+  width: 50%;
+  padding: 50px;
+}
+
+.myWindow h3 {
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 20px;
+  color: #3E4958;
+}
+
+.myWindow li:nth-child(odd) {
+  background: #dbe0e8;
+}
+
+.myProjects {
+  width: 100%;
+  padding: 10px;
+}
+
+.myProjects h5 {
+  float: left;
+  font-size: 18px;
+  width: 65%;
+}
+
+.myProjects p {
+  float: right;
+  padding-left: 20px;
+}
+
+.myProjects a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  .myWindow {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .myWindow {
+    text-align: center;
+  }
+
+  .myProjects h5, .myProjects p {
+    float: none;
+    width: 100%;
+  }
+
+  .myProjects p {
+    font-size: 12px;
+    padding: 0;
+  }
+}

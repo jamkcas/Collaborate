@@ -1,0 +1,55 @@
+/* Project Modal */
+
+.modalHeader {
+  padding: 10px 20px;
+  border-bottom: 1px solid #363633;
+  color: #5B5C5E;
+}
+
+.modalHeader h3 {
+  font-size: 30px;
+  color: #418CCD;
+}
+
+.modalHeader h5 {
+  font-size: 18px;
+}
+
+.modalHeader img {
+  width: 75px;
+}
+
+.modalBody {
+  padding: 10px 20px;
+  color: #5B5C5E;
+  font-size: 14px;
+}
+
+.modalBody h4 {
+  font-size: 24px;
+}
+
+.modalBody img {
+  width: 75px;
+  padding-right: 20px;
+  margin: 0;
+}
+
+.modal li {
+  margin: 40px 0;
+}
+
+.modal .contact {
+  background: #B9B9B9;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline;
+}
+
+.contactBtn {
+  margin-bottom: 20px;
+}
+
+.contactBtn a {
+  text-decoration: none;
+}

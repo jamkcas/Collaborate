@@ -26,8 +26,6 @@ var check = function(e) {
   } else if ($(this).hasClass('sci')) {
     $(this).attr('src', sciSrc[1]);
   }
-  console.log($(e.target));
-  console.log($(this).next());
 };
 
 // On Start
@@ -37,7 +35,8 @@ $(function(){
 
   $('.more').on('click', showDetails);
 
-  $('.categories').on('click', 'img', check)
+  $('.categories').on('click', 'img', check);
+
   $('.searchNav').change(function() {
     $('.search').addClass('display');
     $('.'+$(this).val()).removeClass('display');

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <% if current_user.id == @project.user_id %>
   <%= link_to 'Update', edit_project_path(@project) %>
   <%= link_to 'Delete', project_path(@project), method: 'delete' %>

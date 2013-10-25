@@ -10,10 +10,17 @@
   margin-left: 20px;
 }
 
+.title img {
+  width: 50px;
+  float: left;
+  margin-right: 10px;
+}
+
 .mainHeader h1 {
-  font: normal 75px/75px 'exoextrabold', sans-serif;
+  font: normal 55px/55px 'exoextrabold', sans-serif;
   color: #FFFFFF;
   margin-bottom: 10px;
+  float: left;
 }
 
 .mainHeader h1 a {
@@ -22,9 +29,11 @@
 }
 
 .mainHeader h3 {
-  font: normal 28px/28px 'colaborate-regularregular', sans-serif;
+  font: normal 18px/28px 'colaborate-regularregular', sans-serif;
   color: #FFFFFF;
   padding-bottom: 20px;
+  float: left;
+  clear: both;
 }
 
 .mainHeader h5 {
@@ -45,6 +54,10 @@
   clear: both;
 }
 
+.dropdown a {
+  text-decoration: none;
+}
+
 .login {
   background: #c6d0de;
   color: #3E4958;
@@ -52,14 +65,24 @@
   font-size: 20px;
   line-height: 40px;
   margin-right: 20px;
-
 }
 
-.logout a {
+
+.log a {
   display: none;
-  background: #c6d0de;
-  padding: 5px 10px;
   text-decoration: none;
+  float: right;
+  margin-top: 10px;
+}
+
+.mobileLog h5 {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.mobileLog li {
+  display: block;
 }
 
 .mainNav li a {
@@ -69,31 +92,42 @@
 .errors {
   width: 40%;
   margin: auto;
-  background: #FCED6C;
+  color: #FFFFFF;
+  background: #000000;
+  opacity: 0.6;
   padding: 20px;
-  border-radius: 10px;
 }
 
-@media screen and (max-width: 320px) {
-  .mainHeader h1 {
-    font-size: 55px;
-  }
 
-  .title {
+
+@media screen and (max-width: 670px) {
+
+  .mainHeader .title h1 {
+    font-size: 35px;
     margin: 0;
   }
-}
 
-@media screen and (max-width: 480px) {
-  .mainHeader {
-    text-align: center;
-  }
-
-  .title h3, .login, .dropdown, .mainNav {
+  .title h3, .login, .normalLog, .mainNav {
     display: none;
   }
 
-  .logout a {
+  .title img {
+    width: 30px;
+    margin-top: 10px;
+  }
+
+  .log a {
     display: inline;
+  }
+
+  .title {
+    margin: 0 0 0 10px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .mainHeader .title h1 {
+    font-size: 28px;
   }
 }
